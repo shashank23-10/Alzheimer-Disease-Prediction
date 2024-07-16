@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer's Disease Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        *{
+            margin: 0;
+            padding:0 ;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar{
+            top: 0;
+            position: sticky;
+            background-color: black;
+            color: white;
+            padding: 16px 16px 16px 425px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+            z-index: 4;
+        }
+        li{
+            list-style: none;
+            display: inline;
+            margin: 0 28px;
+        }
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        #symptoms, #prescription{
+            background-color: #e5dcd5;
+            padding: 150px 0px;
+        }
+        #description-container, #prediction{
+            background-color: #ecd0de;
+            padding: 150px 0px;
+        }
+        .description {
+            max-width: 1000px;
+            margin: 120px auto;
+            padding: 50px;
+            border-style: none;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            opacity: 0.7;
+        }
+        .heading{
+            margin: 50px auto 0px auto;
+            text-align: center;
+            font-size: larger;
+        }
+        .symptoms, .prescriptions{
+            max-width: 1000px;
+            display: grid;
+            margin: 50px auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+        .card{
+            padding: 15px;
+            background-color: #fff;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-style:none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer{
+            background-color: black;
+            color: white;
+            padding: 30px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="#description-container" style="text-decoration: none; font-size: 32px;">Home</a></li>
+            <li><a href="#symptoms" style="text-decoration: none; font-size: 32px;">Symptoms</a></li>
+            <li><a href="#prediction" style="text-decoration: none; font-size: 32px;">Prediction</a></li>
+            <li><a href="#prescription" style="text-decoration: none; font-size: 32px;">Prescription</a></li>
+        </ul>
+    </div>
+
+    <div class="description-container" id="#description-container">
+        <div class="description">
+            <h1>Alzheimer's Disease</h1>
+            <p>Alzheimer's disease is a neurodegenerative disorder characterized by progressive cognitive decline, memory loss, and changes in behavior and personality. It's the most common cause of dementia, a condition that impairs cognitive function and affects daily activities.</p>
+        </div>
+    </div>
+    
+    
+    <div class="symptoms-container" id="symptoms">
+        <div class="heading">
+            <h1>Symptoms of Alzheimer's Disease</h1>
+        </div>
+    
+        <div class="symptoms">
+            <div class="card">
+                <p>Confusion</p>
+            </div>
+            <div class="card">
+                <p>Disorientation</p>
+            </div>
+            <div class="card">
+                <p>Getting Lost in familiar places</p>
+            </div>
+            <div class="card">
+                <p>Difficulty in making decisions</p>
+            </div>
+            <div class="card">
+                <p>Personality and Behaviour Changes</p>
+            </div>
+            <div class="card">
+                <p>Acting Depressed</p>
+            </div>
+        </div>
+    </div>
+    <div class="prediction-container" id="prediction">
+        <div class="heading">
+            <h1>Alzheimer's Disease Prediction</h1>
+        </div>
+        <div class="container" >
+            <form id="predictionForm">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex:</label>
+                    <select class="form-control" id="sex" name="sex" required>
+                        <option disabled selected value="">Select Gender</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mri">MR Delay:</label>
+                    <select class="form-control" id="mr" name="mr-delay" required>
+                        <option disabled selected value="">Select MR delay</option>
+                        <option value="0">0-300</option>
+                        <option value="1">301-600</option>
+                        <option value="2">601-900</option>
+                        <option value="3">901-1200</option>
+                        <option value="4">1201-1500</option>
+                        <option value="5">1501-1800</option>
+                        <option value="6">1801-2100</option>
+                        <option value="7">above 2100</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="visits">Number of Visits:</label>
+                    <select class="form-control" id="visit" name="visit" required>
+                        <option disabled selected value="">Select Number of Visits</option>
+                        <option value="0">First Visit</option>
+                        <option value="1">Second Visit</option>
+                        <option value="2">Third Visit</option>
+                        <option value="3">Fourth Visit</option>
+                        <option value="4">Fifth Visit</option>
+                        <option value="5">Visited more than 5 times</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="educ">EDUC:</label>
+                    <input type="number" class="form-control" id="educ" name="educ" required>
+                </div>
+                <div class="form-group">
+                    <label for="group">Category:</label>
+                    <select class="form-control" id="group" name="group" required>
+                        <option disabled selected value="">Select Category</option>
+                        <option value="0">Non-demented</option>
+                        <option value="1">Demented</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="educ">MMSE:</label>
+                    <input type="number" class="form-control" id="mmse" name="mmse" required>
+                </div>
+                <div class="form-group">
+                    <label for="educ">eTIV:</label>
+                    <input type="number" class="form-control" id="etiv" name="etiv" required>
+                </div>
+                <div class="form-group">
+                    <label for="educ">nWBV:</label>
+                    <input type="number" class="form-control" id="nwbv" name="nwbv" required>
+                </div>
+                <!-- Include other input fields as needed -->
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+
+    <div class="prescription-container" id="prescription">
+        <div class="heading">
+            <h1>Common Prescriptions</h1>
+        </div>
+    
+        <div class="prescriptions">
+            <div class="card">
+                <p>Vitamin E</p>
+            </div>
+            <div class="card">
+                <p>Omega-3 fatty acids</p>
+            </div>
+            <div class="card">
+                <p>Curcumin</p>
+            </div>
+            <div class="card">
+                <p>Ginkgo</p>
+            </div>
+            <div class="card">
+                <p>Melatonin</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy Abhiram Reddy Konda, Shashank Pandey 2024</p>
+        <p>Under the guidance of Rahul Sharma Sir and Ardent Computech Private Limited </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function () {
+            $('#predictionForm').submit(function (e) {
+                e.preventDefault(); // Prevent form submission
+                var age = parseInt($('#age').val()); // Get age value
+                var sex = parseInt($('#sex').val()); // Get sex value
+                var mr = parseInt($('#mr').val()); // Get mr-delay value
+                var visit = parseInt($('#visit').val()); // Get visit value
+                var educ = parseInt($('#educ').val()); // Get educ value
+                var group = parseInt($('#group').val()); // Get category value
+                var mmse = parseInt($('#mmse').val()); // Get mmse value
+                var etiv = parseInt($('#etiv').val()); // Get etiv value
+                var nwbv = parseInt($('#nwbv').val()); // Get nwbv value
+                // Perform prediction locally
+                var prediction = predictAlzheimers(age, sex, mr, visit, educ, group, mmse, etiv, nwbv);
+                // Display prediction result
+                $('#result').html('<h4 class="text-center">Prediction Result: ' + prediction + '</h4>');
+            });
+
+            // Function to perform prediction (replace this with your actual prediction logic)
+            function predictAlzheimers(age, sex, mr, visit, educ, group, mmse, etiv, nwbv) {
+                // Example logic: If age is greater than 60 and sex is male, predict positive, otherwise negative
+                if (((age > 60 && sex === 1) || (age >55 && sex===0)) && (visit > 2) && (mr > 1200 || educ < 8) && (mmse <= 24) && (etiv<1300 || etiv>1500) && (nwbv<75)) {
+                    return 'Positive chances of Alzheimers Disease' ;
+                } else {
+                    return 'Positive chances of Alzheimers Disease';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

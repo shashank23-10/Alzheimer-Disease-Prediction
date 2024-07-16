@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer's Disease Prediction</title>
+</head>
+<body>
+    <h1>Alzheimer's Disease Prediction</h1>
+    <form action = "{{url_for('predict')}}" id="prediction-form">
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="sex">Sex:</label><br>
+        <input type="radio" id="male" name="sex" value="1">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="sex" value="0">
+        <label for="female">Female</label><br><br>
+
+        <!-- Include other form fields as needed -->
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="prediction-result">
+        <center>
+            <h1 style="color:red">{{result}}</h1>
+            <center>
+    </div>
+
+</body>
+</html>
